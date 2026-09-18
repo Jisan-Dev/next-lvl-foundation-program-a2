@@ -42,4 +42,4 @@ Show information and poster images come from the [TVMaze API](https://www.tvmaze
 ## Submission links
 
 - Public GitHub repository: **https://github.com/Jisan-Dev/next-lvl-foundation-program-a2**
-- Live deployment: **deployment URL**
+- Live deployment: **https://next-level-movie-explorer-zeta.vercel.app/**
