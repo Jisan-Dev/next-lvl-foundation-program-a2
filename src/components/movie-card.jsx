@@ -1,11 +1,11 @@
-import { ArrowUpRight, Film, Star } from "lucide-react";
+import { ArrowRight, Film, Star } from "lucide-react";
 import { useState } from "react";
 
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
-export default function MovieCard({ show }) {
+export default function MovieCard({ show, onSelect }) {
   const [imageFailed, setImageFailed] = useState(false);
   const hasImage = show.image && !imageFailed;
 
@@ -48,16 +48,15 @@ export default function MovieCard({ show }) {
       </CardHeader>
 
       <CardFooter className="mt-auto border-0 px-4 pt-0 pb-4">
-        <Button asChild variant="outline" className="h-10 w-full justify-between px-3 text-sm">
-          <a
-            href={show.url ?? `https://www.tvmaze.com/shows/${show.id}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`See details for ${show.name} on TVMaze (opens in a new tab)`}
-          >
-            See Details
-            <ArrowUpRight aria-hidden="true" />
-          </a>
+        <Button
+          type="button"
+          variant="outline"
+          className="h-10 w-full justify-between px-3 text-sm"
+          onClick={(event) => onSelect(show, event)}
+          aria-label={`See details for ${show.name}`}
+        >
+          See Details
+          <ArrowRight aria-hidden="true" />
         </Button>
       </CardFooter>
     </Card>

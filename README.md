@@ -1,16 +1,45 @@
-# React + Vite
+# MovieExplorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieExplorer is a responsive React app for discovering TV shows. Browse the TVMaze catalog, search for a title, and open a show to see its poster, rating, premiere date, genres, and overview. The project uses TV-show data even though its name says “MovieExplorer.”
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Landing page with a direct link to the show catalog.
+- Responsive show cards with poster, title, year, rating, and missing-data fallbacks.
+- Title search that runs when you click the search button or press Enter—not while typing.
+- Shareable search URLs, such as `/movies?q=girls`.
+- In-app details dialog with keyboard-friendly close controls and a link to the show on TVMaze.
+- Loading, empty-result, error, and retry states.
+- Sanitized TVMaze summaries that preserve basic text formatting.
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+You need Node.js and pnpm installed. No API key or environment file is required.
 
-## Expanding the ESLint configuration
+```bash
+pnpm install
+pnpm dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Open the local URL printed by Vite (usually `http://localhost:5173`). The homepage is at `/`, and the catalog is at `/movies`.
+
+On Windows PowerShell, use `pnpm.cmd` in place of `pnpm` if the shell blocks the `pnpm.ps1` script.
+
+## Production build
+
+```bash
+pnpm lint
+pnpm build
+pnpm preview
+```
+
+`pnpm build` writes the production site to `dist/`. Deploy that directory to a static host and configure a single-page-app fallback to `index.html` so direct visits to `/movies` work.
+
+## Data and attribution
+
+Show information and poster images come from the [TVMaze API](https://www.tvmaze.com/api). The app uses the `/shows` index for browsing and `/search/shows` for title searches. TVMaze is credited in the app footer and linked from each details dialog. TVMaze data is provided under its [API licensing terms](https://www.tvmaze.com/api#licensing).
+
+## Submission links
+
+- Public GitHub repository: **https://github.com/Jisan-Dev/next-lvl-foundation-program-a2**
+- Live deployment: **deployment URL**
