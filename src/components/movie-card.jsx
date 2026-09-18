@@ -11,7 +11,7 @@ export default function MovieCard({ show, onSelect }) {
 
   return (
     <Card className="h-full gap-0 overflow-hidden py-0 transition-shadow hover:shadow-lg">
-      <div className="relative aspect-[2/3] overflow-hidden bg-[linear-gradient(145deg,#1a3f34,#071411)]">
+      <div className="relative aspect-2/3 overflow-hidden bg-[linear-gradient(145deg,#1a3f34,#071411)]">
         {hasImage ? (
           <img
             src={show.image}
@@ -51,7 +51,7 @@ export default function MovieCard({ show, onSelect }) {
         <Button
           type="button"
           variant="outline"
-          className="h-10 w-full justify-between px-3 text-sm"
+          className="h-10 w-full justify-between px-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400/20 focus:ring-offset-1 focus:ring-offset-background"
           onClick={(event) => onSelect(show, event)}
           aria-label={`See details for ${show.name}`}
         >
